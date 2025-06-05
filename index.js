@@ -2,10 +2,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import noteRoutes from './routes/noteRoutes.js';
-import userRoutes from './routes/userRoutes.js';
-import { errorHandler } from './middleware/errorHandler.js';
-import { sequelize } from './config/db.js';
+import noteRoutes from './src/routes/noteRoutes.js';
+import userRoutes from './src/routes/userRoutes.js';
+import { errorHandler } from './src/middleware/errorHandler.js';
+import { sequelize } from './src/config/db.js';
 
 dotenv.config();
 
