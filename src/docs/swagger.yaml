@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Swing Notes API
+  version: 1.0.0
+paths:
+  /api/user/signup:
+    post:
+      summary: Skapa ett nytt konto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: Konto skapat
+  /api/user/login:
+    post:
+      summary: Logga in
+  /api/notes:
+    get:
+      summary: Hämta anteckningar
+      security:
+        - bearerAuth: []
+    post:
+      summary: Skapa anteckning
+    put:
+      summary: Uppdatera anteckning
+    delete:
+      summary: Ta bort anteckning
+  /api/notes/search:
+    get:
+      summary: Sök anteckningar på titel
+      parameters:
+        - name: query
+          in: query
+          required: true
+          schema:
+            type: string
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
