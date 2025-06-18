@@ -1,4 +1,6 @@
 import { Note } from '../models/noteModel.js';
+import { Op } from 'sequelize';
+
 
 export const getNotes = async (req, res) => {
   const notes = await Note.findAll({ where: { UserId: req.user.id } });
