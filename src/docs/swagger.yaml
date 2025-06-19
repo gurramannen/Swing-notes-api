@@ -2,6 +2,9 @@ openapi: 3.0.0
 info:
   title: Swing Notes API
   version: 1.0.0
+servers:
+  - url: http://localhost:5000
+    description: Local development server
 paths:
   /api/user/signup:
     post:
